@@ -29,16 +29,17 @@
 
 | Column        | Type   | Options     |
 | ------        | ------ | ----------- |
-| product       | text   | null: false |
+| item_name     | text   | null: false |
 | price         | integer| null: false |             
 | status_id     | integer| null: false |
 | charge_id     | integer| null: false |
 | region_id     | integer| null: false |
 | date_id       | integer| null: false |
 | category_id   | integer| null: false |
-| user_id       | integer              |
+| user_id       | integer |user foreign_key|
+             
 
-user foreign_key
+* user foreign_key
 
 ### Association
 
@@ -56,24 +57,24 @@ user foreign_key
 
 * item    foreign_key
 * user    foreign_key
-*
+* address foreign_key
 
 ### Association
 
 - belongs_to :items
 - belongs_to :users
-  belongs_to :addresses
+  has_one    :addresses
 
 ## addresses テーブル
 | Column   | Type       | Options       |
 | -------  | ---------- | ------------- |
-| postal   | integer    |   null: false | 
+| postal   | string     |   null: false | 
 | region_id| integer    |   null: false |                             
-| city     | text       |   null: false |  
-| build    | text       |   null: false |                         
-| address  | text       |   null: false |                            
-| phone    | integer    |   null: false |                             
+| city     | string       |   null: false |  
+| build    | string       |   null: false |                         
+| address  | string       |   null: false |                            
+| phone    | string    |   null: false |                             
 
 
  
- belongs_to :oders
+ belongs_to :oder
