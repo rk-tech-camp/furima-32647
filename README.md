@@ -7,14 +7,13 @@
 
 
 | Column   | Type   | Options     |
-| -------- | ------ | ----------- |
 |nick_name| string | null: false |
 |first_name| string | null: false |
 |last_name | string | null: false |
 |fname_kana| string | null: false |
 |lname_kana| string | null :false |
 ｜birthday  | date  | null :false |
-| email    | string | null :false 、unique: true|    validates :email, uniqueness: true
+| email    | string | null :false 、unique: true|    
 | encrypted_password | string | null: false    |
 
 
@@ -37,7 +36,7 @@
 | region_id     | integer| null: false |
 | date_id       | integer| null: false |
 | category_id   | integer| null: false |
-| user_id       | integer |user foreign_key|
+| user          | references | foreign_key|
              
 
 * user foreign_key
@@ -53,12 +52,12 @@
 
 | Column   | Type       | Options                        |
 | -------  | ---------- | ------------------------------ |
-| item_id  | references |                                |
-| user_id  | references |                                |
+| item     | references |   foreign_key:true             |
+| user     | references |    foreign_key:true            |
 
 * item    foreign_key
 * user    foreign_key
-* address foreign_key
+
 
 ### Association
 
@@ -71,11 +70,12 @@
 | -------  | ---------- | ------------- |
 | postal   | string     |   null: false | 
 | region_id| integer    |   null: false |                             
-| city     | string       |   null: false |  
-| build    | string       |   null: false |                         
-| number   | string       |               |                            
-| phone    | string    |   null: false |                             
-
-* orders  foreign_key
+| city     | string     |   null: false |  
+| build    | string     |   null: false |                         
+| number   | string     |               |                            
+| phone    | string     |   null: false |                             
+| order    | references
  
- belongs_to :oder
+ 
+ 
+ belongs_to :order
