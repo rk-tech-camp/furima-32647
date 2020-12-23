@@ -7,12 +7,13 @@
 
 
 | Column   | Type   | Options     |
-|nick_name| string | null: false |
+|--------  |------  |-----------  |
+|nick_name| string | null: false  |
 |first_name| string | null: false |
 |last_name | string | null: false |
 |fname_kana| string | null: false |
 |lname_kana| string | null :false |
-｜birthday  | date  | null :false |
+｜birthday  | date  | null :false  |
 | email    | string | null :false 、unique: true|    
 | encrypted_password | string | null: false    |
 
@@ -27,7 +28,7 @@
 ## items テーブル
 
 | Column        | Type   | Options     |
-| ------        | ------ | ----------- |
+| ------------- | ------ | ----------- |
 | item_name     | string | null: false |
 | item_note     | text   | null: false |
 | price         | integer| null: false |             
@@ -74,7 +75,7 @@
 | build    | string     |   null: false |                         
 | number   | string     |               |                            
 | phone    | string     |   null: false |                             
-| order    | references
+| order    | references |foreign_key:true |
  
  
  
