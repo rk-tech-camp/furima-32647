@@ -29,7 +29,7 @@
 
 | Column        | Type   | Options     |
 | ------        | ------ | ----------- |
-| item_name     | text   | null: false |
+| item_name     | string | null: false |
 | item_note     | text   | null: false |
 | price         | integer| null: false |             
 | status_id     | integer| null: false |
@@ -73,7 +73,7 @@
 | region_id| integer    |   null: false |                             
 | city     | string       |   null: false |  
 | build    | string       |   null: false |                         
-| number   | string       |   null: false |                            
+| number   | string       |               |                            
 | phone    | string    |   null: false |                             
 
 * orders  foreign_key
