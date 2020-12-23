@@ -11,6 +11,7 @@
 |last_name | string | null: false |
 |fname_kana| string | null: false |
 |lname_kana| string | null :false |
+｜birthday  | date  | null :false |
 | email    | string | unique: true|    validates :email, uniqueness: true
 | encrypted_password | string | null: false   |
 
