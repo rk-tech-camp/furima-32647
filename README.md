@@ -11,9 +11,6 @@
 |last_name | string | null: false |
 |fname_kana| string | null: false |
 |lname_kana| string | null :false |
-| profile  | text   | null: false |
-|occupation| text   | null: false |
-| position | text   | null: false |
 | email    | string | unique: true|    validates :email, uniqueness: true
 | encrypted_password | string | null: false   |
 
@@ -31,14 +28,12 @@
 | ------     | ------ | ----------- |
 | product    | text   | null: false |
 | price      | integer| null: false |             
-| Exhibitor  | text   | null: false |
-| Status     | text   | null: false |
+| status     | text   | null: false |
 | charge     | text   | null: false |
 | region     | text   | null: false |
 | date       | date   | null: false |
 | category   | string |             |
-| image      | active storage       |
-| user       | reference            |
+| user_id    | integer              |
 
 user foreign_key
 
