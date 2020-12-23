@@ -11,18 +11,17 @@
 |last_name | string | null: false |
 |fname_kana| string | null: false |
 |lname_kana| string | null :false |
-| email    | string | null: false            |
-| password | string | null: false            |
-| profile  | text   | null: false            |
-|occupation| text   | null: false            |
-| position | text   | null: false            |
-
+| profile  | text   | null: false |
+|occupation| text   | null: false |
+| position | text   | null: false |
+| email    | string | unique: true|    validates :email, uniqueness: true
+| encrypted_password | string | null: false   |
 
 
 
 ### Association
-- has_many :item
-- has_many :order
+- has_many :items
+- has_many :orders
 - 
   
 
@@ -31,15 +30,21 @@
 | Column     | Type   | Options     |
 | ------     | ------ | ----------- |
 | product    | text   | null: false |
-| price      | integer| null: false |             |
+| price      | integer| null: false |             
+| Exhibitor  | text   | null: false |
+| Status     | text   | null: false |
+| charge     | text   | null: false |
+| region     | text   | null: false |
+| date       | date   | null: false |
 | category   | string |             |
-|user        | reference            |
+| image      | active storage       |
+| user       | reference            |
 
 user foreign_key
 
 ### Association
 
-- belong_to:user
+- belong_to:users
 - has_one :orders
 
    
@@ -57,9 +62,9 @@ user foreign_key
 
 ### Association
 
-- belongs_to :item
-- belongs_to :user
-  belongs_to :address
+- belongs_to :items
+- belongs_to :users
+  belongs_to :addresses
 
 ## address テーブル
 | Column   | Type       | Options                        |
@@ -71,4 +76,4 @@ user foreign_key
 
 
  
- belongs_to :oder
+ belongs_to :oders
