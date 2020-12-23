@@ -67,12 +67,12 @@ user foreign_key
   belongs_to :addresses
 
 ## address テーブル
-| Column   | Type       | Options                        |
-| -------  | ---------- | ------------------------------ |
-| postal   | integer    |                                |
-| city     | text       |                                |
-| address  | text       |                                |
-| phone    | integer    |                                |
+| Column   | Type       | Options       |
+| -------  | ---------- | ------------- |
+| postal   | integer    |   null: false |                             
+| city     | text       |   null: false |                            
+| address  | text       |   null: false |                            
+| phone    | integer    |   null: false |                             
 
 
  
