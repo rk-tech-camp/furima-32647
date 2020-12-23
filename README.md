@@ -2,11 +2,13 @@
 
 
 
+
 ## users テーブル
+
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| nick_name| string | null: false |
+|nick_name| string | null: false |
 |first_name| string | null: false |
 |last_name | string | null: false |
 |fname_kana| string | null: false |
@@ -25,16 +27,16 @@
 
 ## items テーブル
 
-| Column     | Type   | Options     |
-| ------     | ------ | ----------- |
-| product    | text   | null: false |
-| price      | integer| null: false |             
-| status     | text   | null: false |
-| charge     | text   | null: false |
-| region     | text   | null: false |
-| date       | date   | null: false |
-| category   | string |             |
-| user_id    | integer              |
+| Column        | Type   | Options     |
+| ------        | ------ | ----------- |
+| product       | text   | null: false |
+| price         | integer| null: false |             
+| status_id     | integer| null: false |
+| charge_id     | integer| null: false |
+| region_id     | integer| null: false |
+| date_id       | integer| null: false |
+| category_id   | integer| null: false |
+| user_id       | integer              |
 
 user foreign_key
 
@@ -62,11 +64,13 @@ user foreign_key
 - belongs_to :users
   belongs_to :addresses
 
-## address テーブル
+## addresses テーブル
 | Column   | Type       | Options       |
 | -------  | ---------- | ------------- |
-| postal   | integer    |   null: false |                             
-| city     | text       |   null: false |                            
+| postal   | integer    |   null: false | 
+| region_id| integer    |   null: false |                             
+| city     | text       |   null: false |  
+| build    | text       |   null: false |                         
 | address  | text       |   null: false |                            
 | phone    | integer    |   null: false |                             
 
