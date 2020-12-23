@@ -72,7 +72,7 @@
 | region_id| integer    |   null: false |                             
 | city     | string       |   null: false |  
 | build    | string       |   null: false |                         
-| address  | string       |   null: false |                            
+| number   | string       |   null: false |                            
 | phone    | string    |   null: false |                             
 
 
