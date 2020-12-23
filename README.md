@@ -14,8 +14,8 @@
 |fname_kana| string | null: false |
 |lname_kana| string | null :false |
 ｜birthday  | date  | null :false |
-| email    | string | unique: true|    validates :email, uniqueness: true
-| encrypted_password | string | null: false   |
+| email    | string | null :false 、unique: true|    validates :email, uniqueness: true
+| encrypted_password | string | null: false    |
 
 
 
@@ -30,6 +30,7 @@
 | Column        | Type   | Options     |
 | ------        | ------ | ----------- |
 | item_name     | text   | null: false |
+| item_note     | text   | null: false |
 | price         | integer| null: false |             
 | status_id     | integer| null: false |
 | charge_id     | integer| null: false |
@@ -43,8 +44,8 @@
 
 ### Association
 
-- belong_to:users
-- has_one :orders
+- belong_to:user
+- has_one :order
 
    
 
@@ -53,7 +54,7 @@
 | Column   | Type       | Options                        |
 | -------  | ---------- | ------------------------------ |
 | item_id  | references |                                |
-| user     | references |                                |
+| user_id  | references |                                |
 
 * item    foreign_key
 * user    foreign_key
@@ -61,9 +62,9 @@
 
 ### Association
 
-- belongs_to :items
-- belongs_to :users
-  has_one    :addresses
+- belongs_to :item
+- belongs_to :user
+  has_one    :address
 
 ## addresses テーブル
 | Column   | Type       | Options       |
@@ -75,6 +76,6 @@
 | number   | string       |   null: false |                            
 | phone    | string    |   null: false |                             
 
-
+* orders  foreign_key
  
  belongs_to :oder
